@@ -6,7 +6,7 @@ typedef std::initializer_list<std::initializer_list<double>> i_list;
 
   
  /**
- * Constructor to initialize a Matrix
+ * Constructor to initialize a Matrixs
  * 
  * @param rows the length of the rows of the matrix
  * @param cols the length of the columns of the matrix
