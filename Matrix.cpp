@@ -120,7 +120,7 @@ for(uint k = 0; k < numRows(); k++) {
   } // destructor
 
    /**
- * add function to add two matricies together
+ * add function to add a scalar to a matrix 
  * 
  * @param the double to be added
  * @return the new matrix
@@ -240,7 +240,7 @@ Matrix Matrix::multiply(double s) const{
   
   return mat;
  
-  } // multiply this matrix by a scaler
+  } // multiply this matrix by a scalar
 
 
    /**
