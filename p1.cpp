@@ -15,142 +15,39 @@ using std::endl;
 int main() {
 
 
-	Matrix  b = { { 1, 2, 3, 4 } ,{ 5, 6, 7, 8 } ,{ 9, 10 , 11, 12 } };
-	cout << b << endl;
+	 // create two sparse matrices and insert values 
+    Matrix a(4, 4); 
+    Matrix b(4, 4); 
+  
+     a.insert(1, 2, 10); 
+     a.insert(1, 4, 12); 
+     a.insert(3, 3, 5); 
+     a.insert(4, 1, 15); 
+     a.insert(4, 2, 12); 
+    b.insert(1, 3, 8); 
+    b.insert(2, 4, 23); 
+    b.insert(3, 3, 9); 
+    b.insert(4, 1, 20); 
+    b.insert(4, 2, 25); 
+  
 
-	//  Matrix d(2, 2);
-	//     d.at(0, 0) = 1;
-	//    d.at(0, 1) = 2;
-	//    d.at(1, 0) = 3;
-	//    d.at(1, 1) = 4;
+  cout << "Print A" << endl;
+   
+    a.print();
 
-	//    cout << d << endl;
+    cout << "Print B" << endl;
 
-	//     Matrix a = 12.0 / d;
+    b.print();
 
-	//  cout << a << endl;
+    // Output result 
+   cout << "Addition: "; 
+    a.add(b); 
+   // cout << "\nMultiplication: "; 
+    //a.multiply(b); 
+    //cout << "\nTranspose: "; 
+    //Matrix atranspose = a.transpose(); 
+    //atranspose.print(); 
 
-	Matrix a(1, 1);
-	a(0, 0) = 6;
-
-	cout << a(0, 0) << endl;
-
-
-
-	Matrix c(2, 2);
-	c.at(0, 0) = 1;
-	c.at(0, 1) = 2;
-	c.at(1, 0) = 3;
-	c.at(1, 1) = 4;
-
-	cout << c << endl;
-
-	Matrix c1 = 4.0 + c;
-
-	cout << c1 << endl;
-
-	Matrix c2 = 4.0 - c;
-
-	cout << c2 << endl;
-
-	Matrix c3 = 2.0 * c;
-
-	cout << c3 << endl;
-
-	Matrix c4 = 12.0 / c;
-
-	cout << c4 << endl;
-
-
-	Matrix c5(1, 2);
-	c5.at(0, 0) = 1;
-	c5.at(0, 1) = 2;
-
-	cout << -c5 << endl;
-
-
-	Matrix e(2, 2);
-	e.at(0, 0) = 1;
-	e.at(0, 1) = 2;
-	e.at(1, 0) = 3;
-	e.at(1, 1) = 4;
-
-	cout << e << endl;
-
-	Matrix ea(2, 2);
-	ea.at(0, 0) = 4;
-	ea.at(0, 1) = 3;
-	ea.at(1, 0) = 2;
-	ea.at(1, 1) = 1;
-
-	cout << ea << endl;
-
-	Matrix e0 = e + 5.2;
-
-	cout << e0 << endl;
-
-	Matrix e1 = e + e;
-
-	cout << e1 << endl;
-
-	Matrix e2 = e - 3.5;
-
-	cout << e2 << endl;
-
-	Matrix e3 = e - e;
-
-	cout << e3 << endl;
-
-	Matrix e4 = e * 2.1;
-
-	cout << e4 << endl;
-
-	Matrix e5 = e * ea;
-
-	cout << e5 << endl;
-
-	Matrix e6 = e / 2.0;
-
-	cout << e6 << endl;
-
-	Matrix f(2, 1);
-	f.at(0, 0) = 1;
-	f.at(0, 1) = 2;
-
-	cout << f << endl;
-
-	Matrix g(2, 2);
-	g.at(0, 0) = 1;
-	g.at(0, 1) = 2;
-	g.at(1, 0) = 1;
-	g.at(1, 1) = 3;
-
-	cout << g << endl;
-
-	Matrix h = g.multiply(f);
-
-	cout << h << endl;
-
-	cout << h - 5 << endl;
-
-	cout << h * 5 << endl;
-
-	cout << h / 2 << endl;
-
-	Matrix i(2, 2);
-	i.at(0, 0) = 1;
-	i.at(0, 1) = 2;
-	i.at(1, 0) = 1;
-	i.at(1, 1) = 3;
-
-	Matrix j = g.subtract(i);
-
-	cout << j << endl;
-
-
-	Matrix l = g.add(i);
-
-	cout << l << endl;
 
 	return EXIT_SUCCESS;
 }

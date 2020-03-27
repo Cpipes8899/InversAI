@@ -17,19 +17,22 @@ class Matrix {
   
 public:
   
-Matrix(uint rows, uint cols); // constructor (all elements initialized to 0)
+//Matrix(uint rows, uint cols); // constructor (all elements initialized to 0)
 Matrix(const i_list & list); // constructor (using initializer list)
 Matrix(const Matrix & m); // copy constructor
+Matrix(int r, int c); // sparse matrix constructor
 ~Matrix(); // destructor
  
-Matrix add(double s) const; // add scalar to this matrix
-Matrix add(const Matrix & m) const; // add this matrix and another matrix
+//Matrix add(double s) const; // add scalar to this matrix
+//Matrix add(const Matrix & m) const; // add this matrix and another matrix
+void add(Matrix b);
  
 Matrix subtract(double s) const; // subtract scalar from this matrix
 Matrix subtract(const Matrix & m) const; // subtract another matrix from this matrix
  
 Matrix multiply(double s) const; // multiply this matrix by a scaler
 Matrix multiply(const Matrix & m) const; // multiply this matrix by another matrix
+void multiply(Matrix b);
  
 Matrix divide(double s) const; // divide this matrix by a scaler
 Matrix t() const; // transpose of this matrix
@@ -39,6 +42,10 @@ const uint numCols() const; // returns the number of cols
  
 double & at(uint row, uint col); // get/set element at row,col
 const double & at (uint row, uint col) const; // get element at row,col (when using a const object)
+
+void insert(int r, int c, int val);
+Matrix transpose();
+void print();
 
 
      /**
@@ -252,7 +259,7 @@ const double & at (uint row, uint col) const; // get element at row,col (when us
  * @param the matrix to be assigned
  * 
  */
-  Matrix operator= (const Matrix & m){
+  void operator= (const Matrix & m){
 
 
      uint nRows = m.numRows();
@@ -410,6 +417,21 @@ const double & at (uint row, uint col) const; // get element at row,col (when us
   double** mArray; //underlying pointer multidementional array
   uint rLength; //used for numRows
   uint cLength; //used for numCols
+ 
+ 
+  // Maximum number of elements in matrix 
+    const static int MAX = 100; 
+  
+    // Double-pointer initialized by  
+    // the constructor to store  
+    // the triple-represented form 
+    int **data; 
+  
+    // dimensions of matrix 
+    int row, col; 
+  
+    // total number of elements in matrix 
+    int len; 
   
 }; // Matrix
 
